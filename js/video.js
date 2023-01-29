@@ -1,133 +1,193 @@
-//่กดเลือกวิดิโอ
+//กดเลือกวิดีโอ เปอเซนต์ และห้ามกรอ
+var videos = [
+  {
+    id: 1,
+    name: "1.1 แนะนำเว็บแอปพลิเคชัน อพม.Smart",
+    src: "video/1.1 แนะนำเว็บแอปพลิเคชัน อพม.Smart.mp4",
+    watched: false,
+  },
+  {
+    id: 2,
+    name: "2.1 การเข้าสู่ระบบ",
+    src: "video/2.1 การเข้าสู่ระบบ.mp4",
+    watched: false,
+  },
+  {
+    id: 3,
+    name: "3.1 การยื่นคำร้องและการกดรับพิกัด GPS",
+    src: "video/3.1 การยื่นคำร้องและการกดรับพิกัด GPS.mp4",
+    watched: false,
+  },
+  {
+    id: 4,
+    name: "3.2 การกรอกประวัติผู้ประสบปัญหาทางสังคม",
+    src: "video/3.2 การกรอกประวัติผู้ประสบปัญหาทางสังคม.mp4",
+    watched: false,
+  },
+  {
+    id: 5,
+    name: "3.3 การกรอกที่อยู่ตามทะเบียนบ้าน",
+    src: "video/3.3 การกรอกที่อยู่ตามทะเบียนบ้าน.mp4",
+    watched: false,
+  },
+  {
+    id: 6,
+    name: "3.4 การกรอกที่อยู่ปัจจุบัน",
+    src: "video/3.4 การกรอกที่อยู่ปัจจุบัน.mp4",
+    watched: false,
+  },
+  {
+    id: 7,
+    name: "3.5การเลือกประเภทผู้ขอรับบริการ",
+    src: "video/3.5การเลือกประเภทผู้ขอรับบริการ.mp4",
+    watched: false,
+  },
+  {
+    id: 8,
+    name: "3.6 การเลือกสภาพปัญหาความเดือดร้อนที่พบ",
+    src: "video/3.6 การเลือกสภาพปัญหาความเดือดร้อนที่พบ.mp4",
+    watched: false,
+  },
+  {
+    id: 9,
+    name: "3.7 การเลือกเรื่องที่ขอรับความช่วยเหลือที่ต้องการ",
+    src: "video/3.7 การเลือกเรื่องที่ขอรับความช่วยเหลือที่ต้องการ.mp4",
+    watched: false,
+  },
+  {
+    id: 10,
+    name: "3.8 สิทธิสวัสดิการที่เคยได้รับ",
+    src: "video/3.8 สิทธิสวัสดิการที่เคยได้รับ.mp4",
+    watched: false,
+  },
+  {
+    id: 11,
+    name: "3.9 การรับรองข้อมูลส่วนบุคคล",
+    src: "video/3.9 การรับรองข้อมูลส่วนบุคคล.mp4",
+    watched: false,
+  },
+  {
+    id: 12,
+    name: "3.10 การเยี่ยมบ้านและการแนบเอกสารเพิ่มเติม",
+    src: "video/3.10 การเยี่ยมบ้านและการแนบเอกสารเพิ่มเติม.mp4",
+    watched: false,
+  },
+  {
+    id: 13,
+    name: "3.11 การยืนยันการบันทึกข้อมูล",
+    src: "video/3.11 การยืนยันการบันทึกข้อมูล.mp4",
+    watched: false,
+  },
+  {
+    id: 14,
+    name: "4.1 การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับตำบล",
+    src: "video/4.1 การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับตำบล.mp4",
+    watched: false,
+  },
+  {
+    id: 15,
+    name: "4.2 การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับอำเภอ",
+    src: "video/4.2 การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับอำเภอ.mp4",
+    watched: false,
+  },
+  {
+    id: 16,
+    name: "5.1 ความหมายของสถานะ",
+    src: "video/5.1 ความหมายของสถานะ.mp4",
+    watched: false,
+  },
+  {
+    id: 17,
+    name: "6.1 การสร้างทางลัด อพม.Smart ไว้บนหน้าจอหลัก",
+    src: "video/6.1 การสร้างทางลัด อพม.Smart ไว้บนหน้าจอหลัก.mp4",
+    watched: false,
+  },
+];
+
+var player = videojs("videoP");
 function light(Cvideo) {
-  var video;
-  if (Cvideo == 1) {
-    document.getElementById("nameV").innerHTML ="1.1 แนะนำเว็บแอปพลิเคชัน อพม.Smart";
-    video = "video/1.แนะนำเว็บแอปพลิเคชัน อพม.Smart.mp4";
-  } else if (Cvideo == 2) {
-    document.getElementById("nameV").innerHTML = "2.1 การเข้าสู่ระบบ";
-    video = "video/2. การเข้าสู่ระบบ.mp4";
-  } else if (Cvideo == 3) {
-    document.getElementById("nameV").innerHTML ="3.1 การยื่นคำร้องและการกดรับพิกัด GPS";
-    video = "video/3.การยื่นคำร้องและการกดรับพิกัด GPS.mp4";
-  } else if (Cvideo == 4) {
-    document.getElementById("nameV").innerHTML ="3.2 การกรอกประวัติผู้ประสบปัญหาทางสังคม";
-    video = "video/4.การกรอกประวัติผู้ประสบปัญหาทางสังคม.mp4";
-  } else if (Cvideo == 5) {
-    document.getElementById("nameV").innerHTML ="3.3 การกรอกที่อยู่ตามทะเบียนบ้าน";
-    video = "video/5.การกรอกที่อยู่ตามทะเบียนบ้าน.mp4";
-  } else if (Cvideo == 6) {
-    document.getElementById("nameV").innerHTML = "3.4 การกรอกที่อยู่ปัจจุบัน";
-    video = "video/6.การกรอกที่อยู่ปัจจุบัน.mp4";
-  } else if (Cvideo == 7) {
-    document.getElementById("nameV").innerHTML = "3.5 การเลือกประภทผู้ขอรับบริการ";
-    video = "video/7.การเลือกประเภทผู้ขอรับบริการ.mp4";
-  } else if (Cvideo == 8) {
-    document.getElementById("nameV").innerHTML ="3.6 การเลือกสภาพปัญหาความเดือดร้อนที่พบ";
-    video = "video/8.การเลือกสภาพปัญหาความเดือดร้อนที่พบ.mp4";
-  } else if (Cvideo == 9) {
-    document.getElementById("nameV").innerHTML ="3.7 การเลือกเรื่องที่ขอรับความช่วยเหลือที่ต้องการ";
-    video = "video/9.การเลือกเรื่องที่ขอรับความช่วยเหลือที่ต้องการ.mp4";
-  } else if (Cvideo == 10) {
-    document.getElementById("nameV").innerHTML = "3.8 สิทธิสวัสดิการที่เคยได้รับ";
-    video = "video/10.สิทธิสวัสดิการที่เคยได้รับ.mp4";
-  } else if (Cvideo == 11) {
-    document.getElementById("nameV").innerHTML = "3.9 การรับรองข้อมูลส่วนบุคคล";
-    video = "video/11.การรับรองข้อมูลส่วนบุคคล.mp4";
-  } else if (Cvideo == 12) {
-    document.getElementById("nameV").innerHTML ="3.10 การเยี่ยมบ้านและการแนบเอกสารเพิ่มเติม";
-    video = "video/12.การเยี่ยมบ้านและการแนบเอกสารเพิ่มเติม.mp4";
-  } else if (Cvideo == 13) {
-    document.getElementById("nameV").innerHTML = "3.11 การยืนยันการบันทึกข้อมูล";
-    video = "video/13.การยืนยันการบันทึกข้อมูล.mp4";
-  } else if (Cvideo == 14) {
-    document.getElementById("nameV").innerHTML = "4.1 การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับตำบล";
-    video = "video/14.การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับตำบล.mp4";
-  }else if (Cvideo == 15) {
-    document.getElementById("nameV").innerHTML = "4.2 การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับอำเภอ";
-    video = "video/15.การตรวจสอบและบันทึกข้อมูลสำหรับ อพม.ระดับอำเภอ.mp4";
-  }else if (Cvideo == 16) {
-    document.getElementById("nameV").innerHTML = "5.1 ความหมายของสถานะ";
-    video = "video/16.ความหมายของสถานะ.mp4";
-  }else if (Cvideo == 17) {
-    document.getElementById("nameV").innerHTML = "6.1 การสร้าง อพม.Smart ไว้บนหน้าจอหลัก";
-    video = "video/17.การสร้าง อพม.Smart ไว้บนหน้าจอหลัก.mp4";
+  for (let i = 0; i < videos.length; i++) {
+    if (videos[i].id === Cvideo) {
+      document.getElementById("nameV").innerHTML = videos[i].name;
+      player.src({ type: "video/mp4", src: videos[i].src });
+      player.play();
+
+      if (!videos[i].watched) {
+        player.controlBar.progressControl.hide();
+
+        player.on("timeupdate", function () {
+          var percentage = (player.currentTime() / player.duration()) * 100;
+          console.log(percentage);
+          document.getElementById("percentage").innerHTML =
+            Math.round(percentage) + "%";
+          if (percentage === 100) {
+            videos[i].watched = true;
+            console.log(videos[0].watched);
+            return;
+          }
+        });
+      } else {
+        player.controlBar.progressControl.show();
+      }
+      break;
+    }
   }
-  document.getElementById("videoP").src = video;
 }
 
-/* for (let i = 0; i <= 17 ; i++) {
-  if (Cvideo == i) {
-    document.getElementById("nameV").innerHTML ="1.1 แนะนำเว็บแอปพลิเคชัน อพม.Smart";
-    video = "video/..";
-  } 
+for (let v = 2; v <= 11; v++) {
   
-} */
-
-//ห้ามกรอ
-var video = document.getElementById("videoP");
-var percentage = document.getElementById("percentage");
-var supposedCurrentTime = 0;
-video.addEventListener("timeupdate", function () {
-  if (!video.seeking) {
-    supposedCurrentTime = video.currentTime;
+  if (videos[v].watched==false) {
+    document.getElementById("videoLink" + [v + 2]).style.pointerEvents = "none";
+    
+    
+  } else if (videos[v].watched == true) {
+    document.getElementById("videoLink" + [v + 2]).style.pointerEvents = "auto";
   }
-});
-video.addEventListener("seeking", function () {
-  var delta = video.currentTime - supposedCurrentTime;
-  if (delta > 0.01) {
-    video.currentTime = supposedCurrentTime;
-  }
-});
-video.addEventListener("ended", function () {
-  // reset state in order to allow for rewind
-  supposedCurrentTime = 0;
-});
-
-
-//เมื่อดูครั้งแรกจะไม่สามารถกรอได้
-const fastForwardButton = document.getElementById("fast-forward-button");
-
-// Check if the user has watched the video before
-if (localStorage.getItem("hasWatchedVideo") === "true") {
-  // If the user has watched the video before, enable the fast-forward button
-  fastForwardButton.disabled = false;
-} else {
-  // If the user has not watched the video before, disable the fast-forward button
-  fastForwardButton.disabled = true;
 }
 
-// Add an event listener to the video element that listens for the "ended" event
-video.addEventListener("ended", function() {
-  // When the video ends, set the "hasWatchedVideo" value in local storage to true
-  localStorage.setItem("hasWatchedVideo", "true");
-  // Enable the fast-forward button
-  fastForwardButton.disabled = false;
-});
-
-
-
-
-//เปอร์เซ็น
-video.addEventListener("timeupdate", function () {
-  // Calculate the percentage of the video that has been viewed
-  var percent = (video.currentTime / video.duration) * 100;
-  percentage.innerHTML = percent + "%";
-});
-
-//ค้นหา
+/* 
+var player = videojs("videoP");
+var video1 = false;
+player.on("timeupdate", function () {
+  var percentage = (player.currentTime() / player.duration()) * 100;
+  document.getElementById("percentage").innerHTML =
+    Math.round(percentage) + "%";
+  if (percentage === 100) {
+    video1 = true;
+    player.controlBar.progressControl.show();
+    document.getElementById("videoLink4").style.pointerEvents = "auto";
+    document.getElementById("videoLink5").style.pointerEvents = "auto";
+    document.getElementById("videoLink6").style.pointerEvents = "auto";
+    document.getElementById("videoLink7").style.pointerEvents = "auto";
+    document.getElementById("videoLink8").style.pointerEvents = "auto";
+    document.getElementById("videoLink9").style.pointerEvents = "auto";
+    document.getElementById("videoLink10").style.pointerEvents = "auto";
+    document.getElementById("videoLink11").style.pointerEvents = "auto";
+  } else if (video1 === false) {
+    player.controlBar.progressControl.hide();
+    document.getElementById("videoLink4").style.pointerEvents = "none";
+    document.getElementById("videoLink5").style.pointerEvents = "none";
+    document.getElementById("videoLink6").style.pointerEvents = "none";
+    document.getElementById("videoLink7").style.pointerEvents = "none";
+    document.getElementById("videoLink8").style.pointerEvents = "none";
+    document.getElementById("videoLink9").style.pointerEvents = "none";
+    document.getElementById("videoLink10").style.pointerEvents = "none";
+    document.getElementById("videoLink11").style.pointerEvents = "none";
+  }
+}); */
 function search() {
-  let filter = document.getElementById("find").value.toUpperCase();
-  let item = document.querySelectorAll(".accordion");
-  let l = document.getElementsByTagName("a");
-  for (let i = 0; i < item.length; i++) {
-    let a = item[i].getElementsByTagName("a");
-    console.log("a[i]: ", a[i]);
-    let value = a[i].innerHTML || a[i].innerText || a[i].textContent;
-    if (value.toUpperCase().indexOf(filter) > -1) {
-      item[i].style.display = "";
+  // อ่านค่าจาก input ค้นหา
+  var input, filter, links, i, txtValue;
+  input = document.getElementById("find");
+  filter = input.value.toUpperCase();
+  links = document.getElementsByClassName("nav-link");
+  // วนลูปเพื่อค้นหาข้อความใน <a>
+  for (i = 0; i < links.length; i++) {
+    txtValue = links[i].textContent || links[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      links[i].style.display = "";
     } else {
-      item[i].style.display = "none";
+      links[i].style.display = "none";
     }
   }
 }
